@@ -1,16 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Guiding star</title>
+  <title>SunFlowers</title>
   <link rel="stylesheet" href="./style.css">
-
+  <style>
+    #randomGameBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4bbe77;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #randomGameBtn:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<canvas style="display: block; inline-size: 100%; max-inline-size: 700px" width="700" height="550"></canvas>
-<!-- partial -->
-  <script src='https://unpkg.com/zdog@1.1.3/dist/zdog.dist.min.js'></script><script  src="./script.js"></script>
+  <canvas style="display: block; inline-size: 100%; max-inline-size: 700px" width="700" height="550"></canvas>
+  <button id="randomGameBtn">Jueguitos</button>
 
+  <script src='https://unpkg.com/zdog@1.1.3/dist/zdog.dist.min.js'></script>
+  <script src="./script.js"></script>
+  <script>
+    const gameUrls = [
+      'https://www.minijuegos.com/juego/tetris',
+      'https://www.minijuegos.com/juego/snake',
+      'https://www.minijuegos.com/juego/pacman',
+      'https://www.minijuegos.com/juego/buscaminas',
+      'https://www.minijuegos.com/juego/solitario',
+      'https://www.minijuegos.com/juego/sudoku',
+      'https://www.minijuegos.com/juego/ajedrez',
+      'https://www.minijuegos.com/juego/pinball',
+      'https://www.minijuegos.com/juego/2048',
+      'https://www.minijuegos.com/juego/candy-crush',
+      'https://www.minijuegos.com/juego/bubble-shooter',
+      'https://www.minijuegos.com/juego/breakout',
+      'https://www.minijuegos.com/juego/wordle',
+      'https://www.minijuegos.com/juego/laberinto',
+      'https://www.minijuegos.com/juego/memory',
+      'https://www.minijuegos.com/juego/domino',
+      'https://www.minijuegos.com/juego/poker',
+      'https://www.minijuegos.com/juego/space-invaders',
+      'https://poki.com/es/g/papas-taco-mia',
+      'https://poki.com/es/g/papas-sushiria',
+      'https://poki.com/es/g/papas-wingeria',
+      'https://poki.com/es/g/papas-scooperia',
+      'https://poki.com/es/g/papas-freezeria',
+      'https://poki.com/es/g/papas-pizzeria'
+    ];
+
+    document.getElementById('randomGameBtn').addEventListener('click', function() {
+      const randomUrl = gameUrls[Math.floor(Math.random() * gameUrls.length)];
+      window.open(randomUrl, '_blank');
+    });
+  </script>
 </body>
 </html>
